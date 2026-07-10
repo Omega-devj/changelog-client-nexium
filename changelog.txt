@@ -1,1 +1,12 @@
-Nouvelle version
+V1.1 :
+
+- Complete rewrite of the statistics system.
+- Fixed statistics resetting after every client restart.
+- Major performance optimizations for improved speed and stability.
+- Fixed Patch Helper and improved its overall reliability.
+- Completely fixed the Updater system.
+- Improved startup and loading times.
+- Reduced memory usage and optimized background processes.
+- Fixed multiple stability issues and internal bugs.
+- Codebase cleanup and optimization for future updates.
+- General reliability improvements across the entire client.
