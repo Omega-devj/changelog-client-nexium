@@ -1,5 +1,47 @@
-Derniere version :
+# v112 — Signalement identifié & performances
+- Signalement limité à 1 toutes les 2 h (contrôlé en base et dans le client)
+- L'ID et le pseudo Discord du signaleur apparaissent dans le salon
+- Page Protect : affichage du prochain créneau de signalement
+- Chargement de la liste de menaces découpé en tranches : plus de gel au démarrage
+  (interruption maximale ramenée de ~600 ms à 30 ms)
+- Messages anodins ignorés instantanément (20 000 messages en 28 ms)
+- Caches internes plafonnés : plus de croissance mémoire sur longue session
+- Minuteries suspendues quand Discord est en arrière-plan
 
-amelioration de nexium protect (3B+ de record)
-correction de bugs multiples
-ameliorations des performances
+# v111 — Signalement via base Nexium
+- Le signalement passe par la base Nexium au lieu du compte Discord :
+  fonctionne pour tous, même hors du serveur
+- Webhook déplacé côté serveur, absent du client
+- Anti-spam en base : quotas, anti-doublon, garde-fou global, bannissement
+- Icônes des plugins placées avant l'engrenage (paramètres tout à droite)
+
+# v110 — Protect : failles comblées
+- Les messages MODIFIÉS après envoi sont désormais analysés
+- Détection des liens masqués trompeurs (texte affiché ≠ destination)
+- Analyse des aperçus de liens (embeds)
+- Invitations de serveur suspectes signalées (serveur récent, peu de membres,
+  nom imitant une marque)
+- Pièces jointes : vérification du contenu réel, un .png qui est un .exe est détecté
+- Journal des erreurs consultable dans Nexium Données
+- Journal des requêtes bloquées dans Nexium Privacy
+- Signalement : plusieurs voies d'envoi et file d'attente avec réessai
+
+# v109 — Correctifs de la détection intelligente
+- Un lien suspect déclenche enfin un avertissement au clic, avec le motif
+- Un lien suspect n'est plus compté comme « lien sûr »
+- Au survol, un lien suspect s'affiche en orange (il apparaissait « sûr » en vert)
+- Domaines officiels (Steam, Roblox, PayPal, Twitch…) plus bloqués à tort en Strict
+- Surveillance des icônes de plugins allégée
+
+# v108 — Mise en page du panneau
+- Les icônes des plugins ne débordent plus du panneau utilisateur
+- Le pseudo se tronque pour laisser la place, retour à la ligne automatique
+- Styles d'origine restaurés si la fonction est désactivée
+
+# v107 — Sécurité renforcée
+- Icônes des plugins (FakeDeafen, FakeMute…) restaurées après la mise à jour Discord
+- Détection intelligente sans liste : marques imitées, extensions à risque,
+  mots-clés d'hameçonnage, avec motifs affichés
+- Profils de protection : Strict, Équilibré, Minimal
+- Liste blanche distante pour éviter les faux positifs
+- Signalement de menace vers le serveur Nexium
