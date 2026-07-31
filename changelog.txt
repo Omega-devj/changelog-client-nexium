@@ -1,3 +1,15 @@
+# v124 — Architecture renforcée, Protect nouvelle génération & fiabilité
+Refonte complète de l'architecture interne pour améliorer la stabilité et faciliter les futures mises à jour Discord
+Chaque module est désormais isolé dans son propre environnement sécurisé : une erreur n'empêche plus le reste de Nexium ni Discord de fonctionner
+Nouveau système centralisé pour tous les hooks (fetch, XMLHttpRequest, sendBeacon...) : activation, désactivation et récupération d'urgence en un clic
+Initialisation intelligente : seuls les modules réellement utilisés sont chargés au démarrage
+Chargement différé (lazy loading) des pages Réseau, Musique, Statistiques, Sponsor et autres modules secondaires
+Réduction importante de la mémoire utilisée au lancement
+Temps de démarrage encore réduit
+Détection automatique des modules en erreur avec récupération sans redémarrage
+Journal des erreurs enrichi avec origine précise, pile d'appel et fréquence
+Vérification automatique de l'intégrité des modules au démarrage
+
 # v112 — Signalement identifié & performances
 - Signalement limité à 1 toutes les 2 h (contrôlé en base et dans le client)
 - L'ID et le pseudo Discord du signaleur apparaissent dans le salon
